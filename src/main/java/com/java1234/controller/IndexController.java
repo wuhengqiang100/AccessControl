@@ -85,6 +85,7 @@ public class IndexController {
 	public StringBuffer property(@RequestParam(value="id",required=false) String id, HttpServletResponse response)throws Exception{
 		Control control=controlService.getControlById(Integer.parseInt(id));
 		StringBuffer strPro=new StringBuffer();
+		strPro.append(" <INPUT id='id' name='id' class='ipt' type='hidden' value='Integer.parseInt(id)'>");
 		if (StringUtils.isNotEmpty(control.getAccount())){
 			strPro.append("<input id='account' name='account' class='ipt' type='text' placeholder='请输入账号' value=''/>");
 //			strPro.append("<INPUT id=\"account\" name=\"account\" class=\"ipt\" type=\"text\" placeholder=\"请输入账号\" value=\"\"></INPUT>");

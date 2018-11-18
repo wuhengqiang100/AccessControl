@@ -3,6 +3,7 @@ package com.java1234.service.impl;
 
 import com.java1234.dao.ControlDao;
 import com.java1234.entity.Control;
+import com.java1234.entity.User;
 import com.java1234.service.ControlService;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +31,10 @@ public class ControlServiceImpl implements ControlService {
 
     public Control getControlById(Integer id) {
         return controlDao.getControlById(id);
+    }
+
+    public Control getControlByLoginUser(User user) {
+        return controlDao.getControlByLoginUser(user);
     }
 
 }

@@ -17,15 +17,26 @@ public class User {
     private Integer id;//用户编号
     private String account;//账号
     private String password;//密码
-    private int tellphone;//电话号码
+    private String tellphone;//电话号码
     private Date requestTime;//请求时间
     private String requestLocation;//求情地址
     private String  identity;//身份
     private String work;//工作
-    private int age;//年龄
+    private String age;//年龄
     private String sex;//性别
     private String nickName;//昵称
     private Float reputation;//信誉度
+
+    private Control control;//令牌实体
+
+    public Control getControl() {
+        return control;
+    }
+
+    public void setControl(Control control) {
+        this.control = control;
+    }
+
 
     public Integer getId() {
         return id;
@@ -51,11 +62,11 @@ public class User {
         this.password = password;
     }
 
-    public int getTellphone() {
+    public String getTellphone() {
         return tellphone;
     }
 
-    public void setTellphone(int tellphone) {
+    public void setTellphone(String tellphone) {
         this.tellphone = tellphone;
     }
 
@@ -91,11 +102,11 @@ public class User {
         this.work = work;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 

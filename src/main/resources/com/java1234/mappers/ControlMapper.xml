@@ -34,5 +34,38 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getControlById" parameterType="Integer" resultMap="ControlResult">
 		select t.* FROM tb_control t WHERE  id=#{id};
 	</select>
+
+	<select id="getControlByLoginUser" resultMap="ControlResult">
+		select * from tb_control
+		<where>
+			<if test="user.account!=null and user.account!='' ">
+				and account= #{user.account}
+			</if>
+			<if test="user.password!=null and user.password!='' ">
+				and password=#{user.password}
+			</if>
+			<if test="user.tellphone!=null and user.tellphone!='' ">
+				and tellphone=#{user.tellphone}
+			</if>
+			<if test="user.requestTime!=null and user.requestTime!='' ">
+				and requestTime=#{user.requestTime}
+			</if>
+			<if test="user.requestLocation!=null and user.requestLocation!='' ">
+				and requestLocation=#{user.requestLocation}
+			</if>
+			<if test="user.identity!=null and user.identity!='' ">
+				and identity=#{user.identity}
+			</if>
+			<if test="user.work!=null and user.work!='' ">
+				and work=#{user.work}
+			</if>
+			<if test="user.age!=null and user.age!='' ">
+				and age=#{user.age}
+			</if>
+			<if test="user.nickName!=null and user.nickName!='' ">
+				and nickName=#{user.nickName}
+			</if>
+		</where>
+	</select>
 	
 </mapper> 

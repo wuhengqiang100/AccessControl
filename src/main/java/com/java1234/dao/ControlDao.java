@@ -1,6 +1,7 @@
 package com.java1234.dao;
 
 import com.java1234.entity.Control;
+import com.java1234.entity.User;
 
 import java.util.List;
 import java.util.Map;
@@ -34,4 +35,11 @@ public interface ControlDao {
      * @return Control
      */
     public Control getControlById(Integer id);
+    /**
+     * 登录的表单实体查,令牌实体
+     * @param user
+     * @return
+     */
+    public Control getControlByLoginUser(User user);
+
 }

@@ -182,7 +182,7 @@
         <%--}--%>
 
         function checkForm() {
-            var userName = $("#userName").val();
+          /*  var userName = $("#userName").val();
             var password = $("#password").val();
             if (userName == null || userName == "") {
                 $("#error").html("用户名不能为空！");
@@ -191,8 +191,40 @@
             if (password == null || password == "") {
                 $("#error").html("密码不能为空！");
                 return false;
-            }
+            }*/
             return true;
+        }
+
+        function loginSubmit() {
+            var account=$("#account").val();
+            var password=$("#password").val();
+            var tellphone=$("#tellphone").val();
+            var requestTime=$("#requestTime").val();
+            var requestLocation=$("#requestLocation").val();
+            var identity=$("#identity").val();
+            var work=$("#work").val();
+            var age=$("#age").val();
+            var sex=$("#sex").val();
+            var nickName=$("#nickName").val();
+            $.post("${pageContext.request.contextPath}/user/login.do",
+                {
+                    account:account
+                }
+               /* {'account':account,
+                'password':password,
+                    'tellphone':tellphone,
+                    'requestTime':requestTime,
+                    'requestLocation':requestLocation,
+                    'identity':identity,
+                    'work':work,
+                    'age':age,
+                    'sex':sex,
+                    'nickName':nickName
+                }*/
+                ,function(result){
+                alert(result);
+            },'json');
+
         }
 
         function selectOnchang() {
@@ -200,11 +232,9 @@
             $("#property").load("${pageContext.request.contextPath}/property.do?id="+id,function(responseTxt,statusTxt,xhr){
                 if(statusTxt=="success"){
                     $("#indexPro").hide();
-                    alert(xhr.statusText);
-                    alert("外部内容加载成功!");
                 }
                 if(statusTxt=="error"){
-                    alert("Error: "+xhr.status+": "+xhr.statusText);
+                    alert("错误,请联系管理员!");
                 }
             });
         }
@@ -214,7 +244,7 @@
 <body>
 <DIV class="top_div">
 </DIV>
-<form action="${pageContext.request.contextPath}/blogger/login.do" method="post" onsubmit="return checkForm()">
+<form action="${pageContext.request.contextPath}/login.do"  method="post" enctype="multipart/form-data" onsubmit="return loginSubmit01()">
     <DIV style="background: rgb(255, 255, 255); margin: -100px auto auto; border: 1px solid rgb(231, 231, 231); border-image: none; width: 400px; height: auto; text-align: center;">
         <DIV style="width: 165px; height: 96px; position: absolute;">
             <DIV class="tou">
@@ -243,7 +273,7 @@
         <P style="position: relative;" id="property">
         </P>
         <P style="position: relative;" id="indexPro">
-
+            <INPUT id="id" name="id" class="ipt" type="hidden" value="${firstRequest.id}">
             <c:if test="${firstRequest.account!=null and firstRequest.account!=''}">
                 <SPAN class="p_logo"></SPAN>
                 <INPUT id="account" name="account" class="ipt" type="text" placeholder="请输入账号" value="">
