@@ -1,0 +1,125 @@
+package com.java1234.entity;
+
+import java.util.Date;
+
+/**
+* @Description:    用户实体类
+* @Author:         wuhq
+* @CreateDate:     2018/11/8 15:31
+* @UpdateUser:     wuhq
+* @UpdateDate:     2018/11/8 15:31
+* @UpdateRemark:
+* @Version:
+*/
+
+public class User {
+
+    private Integer id;//用户编号
+    private String account;//账号
+    private String password;//密码
+    private int tellphone;//电话号码
+    private Date requestTime;//请求时间
+    private String requestLocation;//求情地址
+    private String  identity;//身份
+    private String work;//工作
+    private int age;//年龄
+    private String sex;//性别
+    private String nickName;//昵称
+    private Float reputation;//信誉度
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getTellphone() {
+        return tellphone;
+    }
+
+    public void setTellphone(int tellphone) {
+        this.tellphone = tellphone;
+    }
+
+    public Date getRequestTime() {
+        return requestTime;
+    }
+
+    public void setRequestTime(Date requestTime) {
+        this.requestTime = requestTime;
+    }
+
+    public String getRequestLocation() {
+        return requestLocation;
+    }
+
+    public void setRequestLocation(String requestLocation) {
+        this.requestLocation = requestLocation;
+    }
+
+    public String getIdentity() {
+        return identity;
+    }
+
+    public void setIdentity(String identity) {
+        this.identity = identity;
+    }
+
+    public String getWork() {
+        return work;
+    }
+
+    public void setWork(String work) {
+        this.work = work;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public Float getReputation() {
+        return reputation;
+    }
+
+    public void setReputation(Float reputation) {
+        this.reputation = reputation;
+    }
+}

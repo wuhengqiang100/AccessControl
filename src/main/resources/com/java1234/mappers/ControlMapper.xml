@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java1234.dao.ControlDao">
+
+	<resultMap type="Control" id="ControlResult">
+		<result property="id" column="id"/>
+		<result property="requestAim" column="requestAim"/>
+		<result property="account" column="account"/>
+		<result property="password" column="password"/>
+		<result property="tellphone" column="tellphone"/>
+		<result property="requestTime" column="requestTime"/>
+		<result property="requestLocation" column="requestLocation"/>
+		<result property="identity" column="identity"/>
+		<result property="work" column="work"/>
+		<result property="age" column="age"/>
+		<result property="sex" column="sex"/>
+		<result property="nickName" column="nickName"/>
+		<result property="reputation" column="reputation"/>
+	</resultMap>
+
+	<select id="getControlAll" resultMap="ControlResult">
+		select * from tb_control ORDER  BY id ASC ;
+	</select>
+	
+	<select id="getRequestAimAll" resultMap="ControlResult">
+		select * from tb_control ;
+	</select>
+
+	<select id="getControlMapById" parameterType="Integer" resultType="Map">
+		select t.* FROM tb_control t WHERE  id=#{id};
+	</select>
+	<select id="getControlById" parameterType="Integer" resultMap="ControlResult">
+		select t.* FROM tb_control t WHERE  id=#{id};
+	</select>
+	
+</mapper> 
